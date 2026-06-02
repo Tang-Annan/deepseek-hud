@@ -1,0 +1,10 @@
+{
+  "name": "deepseek-hud",
+  "version": "0.1.0",
+  "description": "Claude Code statusline for DeepSeek API sessions: session tokens, prompt-cache hit rate, spend (¥) and account balance. Auto-detects the provider and (by default) renders itself on DeepSeek sessions while delegating to claude-hud on Claude sessions; can also overlay or run standalone.",
+  "author": {
+    "name": "tangannan"
+  },
+  "keywords": ["statusline", "deepseek", "claude-code", "hud", "tokens", "balance"],
+  "commands": ["./commands/setup.md"]
+}

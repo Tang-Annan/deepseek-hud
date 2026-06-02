@@ -1,0 +1,16 @@
+{
+  "name": "deepseek-hud",
+  "version": "0.1.0",
+  "description": "Claude Code statusline add-on for DeepSeek API sessions: session tokens, prompt-cache hit rate, spend (¥) and account balance. Wraps claude-hud.",
+  "bin": {
+    "deepseek-hud": "./statusline.js"
+  },
+  "scripts": {
+    "refresh-balance": "node statusline.js --refresh-balance"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT",
+  "keywords": ["claude-code", "statusline", "deepseek", "hud", "tokens", "balance", "cost"]
+}

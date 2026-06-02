@@ -1,0 +1,19 @@
+{
+  "name": "deepseek-hud",
+  "owner": {
+    "name": "tangannan"
+  },
+  "metadata": {
+    "description": "DeepSeek statusline add-on for Claude Code — session tokens, prompt-cache hit rate, spend and balance.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "deepseek-hud",
+      "source": "./",
+      "description": "Wraps claude-hud and, on auto-detected DeepSeek sessions, appends a line showing session tokens, cache hit rate, spend (¥) and account balance. Non-blocking balance polling. Zero dependencies.",
+      "category": "monitoring",
+      "tags": ["hud", "statusline", "deepseek", "tokens", "balance", "cost", "monitoring"]
+    }
+  ]
+}

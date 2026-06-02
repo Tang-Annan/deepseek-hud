@@ -1,0 +1,52 @@
+{
+  "_comment": "复制本文件为 config.json 后按需修改。所有字段都有内置默认值，可只保留想覆盖的项。",
+
+  "_mode_comment": "渲染模式：'auto'（默认）按 API 自动二选一——DeepSeek 会话用本插件自渲染基础行+DeepSeek 行(不调用 claude-hud)，非 DeepSeek 会话交给 claude-hud；'overlay' 始终用 claude-hud 基础行、DeepSeek 会话再叠加 DeepSeek 行；'standalone' 始终自渲染、从不调用 claude-hud。",
+  "mode": "auto",
+  "_base_comment": "自渲染基础行的元素开关，仅在 auto(DeepSeek)/standalone/或 claude-hud 缺失时生效。",
+  "base": {
+    "showModel": true,
+    "showProject": true,
+    "showGit": true,
+    "showContext": true,
+    "contextBarWidth": 10
+  },
+
+  "showCost": true,
+  "showCacheHit": true,
+  "showBalance": true,
+  "_balanceAge_comment": "在余额后显示上次刷新距今时间，如「余额 ¥48.50 (2分钟前)」。",
+  "showBalanceAge": true,
+  "_breakdown_comment": "在 tok 后显示 in/out/cache 明细，如「tok 4.5k (in 1.0k/out 500/cache 3.0k)」。",
+  "showTokenBreakdown": false,
+
+  "_pricing_comment": "DeepSeek 计价（人民币 CNY / 每 1M tokens）。价格会调整，请对照官方定价页 https://api-docs.deepseek.com/zh-cn/quick_start/pricing 核对后更新。pricing 为默认档(v4-flash，旧版 deepseek-chat/reasoner 也按 flash 计)；pricingByModel 按 model.id 子串覆盖(pro 与 flash 不同价)。",
+  "pricing": {
+    "cacheHitInput": 0.02,
+    "cacheMissInput": 1,
+    "output": 2
+  },
+  "pricingByModel": {
+    "deepseek-v4-pro": {
+      "cacheHitInput": 0.025,
+      "cacheMissInput": 3,
+      "output": 6
+    },
+    "deepseek-v4-flash": {
+      "cacheHitInput": 0.02,
+      "cacheMissInput": 1,
+      "output": 2
+    }
+  },
+
+  "_offpeak_comment": "错峰折扣（DeepSeek 优惠时段 UTC 16:30-00:30，即北京时间 00:30-08:30）。默认关闭，开启后该时段花费按 offPeakRate 折算。",
+  "offPeakDiscount": false,
+  "offPeakRate": 0.5,
+
+  "_balance_comment": "余额缓存新鲜度（毫秒），超过则后台异步刷新，不阻塞渲染。balanceUrl 默认 DeepSeek 官方；用第三方代理时按需改。",
+  "balanceFreshnessMs": 300000,
+  "balanceUrl": "https://api.deepseek.com/user/balance",
+
+  "_hud_comment": "手动指定 claude-hud 的 dist/index.js 路径；留空则自动从 plugins/cache 定位最新版。",
+  "hudCommand": ""
+}
