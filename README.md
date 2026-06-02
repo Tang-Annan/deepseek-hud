@@ -157,7 +157,7 @@ $env:ANTHROPIC_DEFAULT_OPUS_MODEL = "deepseek-v4-pro[1m]"
 ### 方式 A：marketplace（推荐，便于复用/更新）
 
 ```
-/plugin marketplace add <你的 GitHub 用户名>/deepseek-hud
+/plugin marketplace add Tang-Annan/deepseek-hud
 /plugin install deepseek-hud
 /deepseek-hud:setup
 ```
@@ -165,7 +165,7 @@ $env:ANTHROPIC_DEFAULT_OPUS_MODEL = "deepseek-v4-pro[1m]"
 ### 方式 B：手动 clone
 
 ```bash
-git clone https://github.com/<你>/deepseek-hud.git
+git clone https://github.com/Tang-Annan/deepseek-hud.git
 ```
 然后在 Claude Code 里运行 `/deepseek-hud:setup`（命令会让你提供仓库内 `statusline.js` 的路径），
 或手动改 `~/.claude/settings.json` 的 `statusLine.command`（见下）。
